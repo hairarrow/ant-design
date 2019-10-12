@@ -4,6 +4,7 @@ import Animate from 'rc-animate';
 import omit from 'omit.js';
 import classNames from 'classnames';
 import ScrollNumber from './ScrollNumber';
+import Ribbon from '../ribbon';
 import { PresetColorTypes } from '../_util/colors';
 import { ConfigConsumer, ConfigConsumerProps } from '../config-provider';
 
@@ -33,6 +34,8 @@ function isPresetColor(color?: string): boolean {
 }
 
 export default class Badge extends React.Component<BadgeProps, any> {
+  static Ribbon = Ribbon;
+
   static defaultProps = {
     count: null,
     showZero: false,

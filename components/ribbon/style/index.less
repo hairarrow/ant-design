@@ -1,0 +1,49 @@
+@import '../../style/themes/index';
+@import '../../style/mixins/index';
+
+@ribbon-prefix-cls: ~'@{ant-prefix}-badge-ribbon';
+@ribbon-offset: 6px;
+
+.@{ribbon-prefix-cls} {
+  .reset-component;
+
+  position: relative;
+  display: inline-block;
+  color: unset;
+
+  &-ribbon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(@ribbon-offset) translateY(@ribbon-offset);
+  }
+
+  &-ribbon-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 24px;
+    padding-left: 8px;
+    padding-right: 8px;
+    line-height: 1;
+    background-color: @highlight-color;
+    color: #fff;
+    font-size: @font-size-base;
+    border-radius: 4px;
+    border-bottom-right-radius: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &-ribbon-container:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    line-height: 1;
+    width: 0;
+    height: 0;
+    border-top: @ribbon-offset solid darken(@highlight-color, 20%);
+    border-right: @ribbon-offset solid transparent;
+    transform: translateY(100%);
+  }
+}
